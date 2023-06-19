@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="loginAndRegisterStyle.css">
+</head>
+<body>
+<div class="container">
+
+<h1>Login</h1>
+
+<p><label for="email">E-mail</label><br>
+<input type="email" class="inputLogin" id="email" onchange="validarEmail()"></p>
+
+<label for="email">Senha</label><br>
+<input type="password"  class="inputLogin" id="senha">
+<p class="showPasswordText"><input type="checkbox" class="showPassword" onclick="mostrarSenha()"> Mostrar Senha</p>
+<p class="noAcount" onclick="window.location.href='register.html'">Não possui uma conta?</p>
+<a onclick="return validarSenha()" class="button1">Logar</a>
+</div>
+
+<script>
+    //executa quando clica
+    function validarEmail(){
+    // Obtém o elemento do campo de email do formulário
+    var emailInput = document.getElementById('email');
+    
+    // Obtém o valor do email fornecido pelo usuário
+    var email = emailInput.value;
+    
+    // Expressão regular para validar o formato do email
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    // Verifica se o email está vazio ou não é um email válido
+    if (email === '' || !emailRegex.test(email)) {
+        alert('Por favor, insira um endereço de email válido.');
+    } else {
+        // O email é válido, prossiga com o processamento do formulário
+        // ...
+    }
+    }
+    </script>
+
+
+<!--Script em JavaScript para mostrar/esconder senha-->
+<script>
+    function mostrarSenha(){
+        var tipo = document.getElementById("senha");
+            if(tipo.type =="password") 
+                {tipo.type = "text";}
+            else
+                {tipo.type  = "password"}
+    }
+</script>
+
+</body>
+</html>
