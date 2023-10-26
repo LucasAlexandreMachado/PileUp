@@ -7,7 +7,9 @@ Um sistema de uso pessoal para cadastro, organização e avaliação de livros, 
 Este sistema foi desenvolvido com as seguintes tecnologias:
 
 - **PHP:** O sistema é baseado na linguagem de programação PHP.
-- **Banco de dados SQL:** Foi utilizado um banco de dados SQL para armazenar os dados das obras.
+- **Banco de dados SQL:** Foi utilizado um banco de dados SQL para armazenar os dados das obras e usuários.
+- **PHPMailer:** É uma biblioteca que foi utilizada para enviar e-mails de recuperação de senhas no sistema.
+- **Bootstrap:** Foi um framework utilizado para estilizar o sistema.
 
 ## 🌐 Acesso Online
 
@@ -27,4 +29,4 @@ Este projeto foi desenvolvido como parte do trabalho de conclusão de curso por:
 
 **Lucas Alexandre Machado**
 
-- Se você tiver alguma pergunta ou sugestão, sinta-se à vontade para entrar em contato com o autor. 📧
+- Se você tiver alguma pergunta ou sugestão, sinta-se à vontade para entrar em contato. 📧
