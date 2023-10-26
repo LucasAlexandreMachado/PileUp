@@ -30,3 +30,17 @@ Este projeto foi desenvolvido como parte do trabalho de conclusão de curso por:
 **Lucas Alexandre Machado**
 
 - Se você tiver alguma pergunta ou sugestão, sinta-se à vontade para entrar em contato. 📧
+
+## 📱 Rodando em Dispositivos Mobile
+
+![Tela de Cadastro Mobile](https://i.imgur.com/D1ny8Lk.jpg)
+![Index Mobile](https://imgur.com/uDASpzA.jpg)
+
+## 💻 Rodando em Desktop
+![Tela de Cadastro](https://i.imgur.com/oIdDQ6i.png)
+![Tela de Login](https://i.imgur.com/LaaTxri.png)
+![Recuperação de senhas](https://i.imgur.com/LjbAGAf.png)
+![Index](https://i.imgur.com/ivIgg9T.png)
+![Criação de Obras](https://i.imgur.com/EbBlBGg.png)
+![Edição de obras](https://i.imgur.com/wFf7WuR.png)
+
