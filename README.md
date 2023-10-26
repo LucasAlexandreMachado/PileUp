@@ -11,7 +11,7 @@ Este sistema foi desenvolvido com as seguintes tecnologias:
 
 ## 🌐 Acesso Online
 
-Este sistema está hospedado e pode ser acessado online. [Clique aqui para acessar o PileUp]([URL_DO_SEU_SISTEMA](http://pileup.byethost24.com/)).
+Este sistema está hospedado e pode ser acessado online. [Clique aqui para acessar o PileUp](http://pileup.byethost24.com/).
 
 ## 🚀 Como Conectar
 
