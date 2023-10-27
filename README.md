@@ -21,7 +21,8 @@ Para usar o PileUp em seu próprio ambiente de desenvolvimento, siga os passos a
 
 1. Clone este repositório.
 2. Substitua os dados de conexão do banco nos arquivos `logic.php` e `database.php` com suas próprias informações de banco de dados.
-3. Inicie o servidor web para executar o sistema.
+3. Subistitua os dados de conexão do PHPMailer no arquivo `mailer.php` com suas próprias informações do email.
+4. Inicie o servidor web para executar o sistema.
 
 ## 👨‍💻 Autor
 
