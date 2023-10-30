@@ -12,8 +12,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Biblioteca</title>
-
-    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -32,7 +30,6 @@
   <body>
 
     <div class="container mt-5">
-      <!-- Notificação de ação -->
       <?php 
       if (isset($_REQUEST['info'])){?>
         <?php if($_REQUEST['info'] == "added") {?>
@@ -56,7 +53,6 @@
         <a href="../filmes/index.php" class="btn btn-outline-dark">Filmes</a>
         <a href="../quadrinhos/index.php" class="btn btn-outline-dark">Quadrinhos</a>
       </div>
-      <!-- Criar um novo livro -->
       <div class="text-center">
         <a href="create.php" class="btn btn-outline-dark">Adicionar serie</a>
         <a href="../profile/profile.php" class="btn btn-info">Perfil</a>
@@ -64,16 +60,12 @@
       </div>
 
 
-
-
-      <!-- Mostrar livros da base de dados -->
       <div class="row">
       
       <?php foreach($query as $q){?>
     <div class="col-12 col-lg-4 d-flex justify-content-center">
         <div class="card text-white bg-dark mt-5" style="width:18rem;">
             <?php
-            // Check if there is a file_name associated with the book and it exists
             if (!empty($q['file_name']) && file_exists($q['file_name'])) {
                 echo '<img src="' . $q['file_name'] . '" class="card-img-top" alt="Book Image">';
             } else {
@@ -102,7 +94,6 @@
       <a href="https://anilist.co/home">Sobre</a>
     </div>
   </footer>
-    <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

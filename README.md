@@ -1,4 +1,7 @@
 # 📚🎥 PileUp
+<div>
+    <img alt="LOGO" src="https://i.imgur.com/hEEdhSr.png" width="25%">
+</div>
 
 Um sistema de uso pessoal para cadastro, organização e avaliação de livros, filmes e obras em geral.
 

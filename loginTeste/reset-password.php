@@ -38,10 +38,10 @@ session_start();
         <?php
     if (isset($_SESSION['error'])) {
         echo '<div class="error">' . $_SESSION['error'] . '</div>';
-        unset($_SESSION['error']); // Clear the error after displaying it
+        unset($_SESSION['error']); 
     } elseif (isset($_SESSION['success'])) {
         echo '<div class="success">' . $_SESSION['success'] . '</div>';
-        unset($_SESSION['success']); // Clear the success message after displaying it
+        unset($_SESSION['success']); 
     }
     ?>
     </form>

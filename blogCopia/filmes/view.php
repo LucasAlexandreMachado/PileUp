@@ -21,7 +21,6 @@
     <?php foreach($query as $q){?>
     <div class="bg-dark p-5 rounded-lg text-white text-center">
         <?php
-        // Check if there is a file_name associated with the book and it exists
         if (!empty($q['file_name']) && file_exists($q['file_name'])) {
             echo '<img src="' . $q['file_name'] . '" class="img-fluid" alt="Book Image">';
         } else {
@@ -47,7 +46,6 @@
 
 
     </div>
-    <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -33,14 +33,12 @@ if ($query) {
     $profileImage = $row['profile_image'];
 
     if ($profileImage) {
-        // Exibe a imagem de perfil
         echo '<img src="' . $profileImage . '" alt="Imagem de Perfil" class="img-fluid" style="">';
     } else {
-        // Caso o usuário não tenha uma imagem de perfil, você pode exibir uma imagem padrão ou uma mensagem
         echo 'O usuário não possui uma imagem de perfil.';
     }
 }  
-$sql = "SELECT name FROM user WHERE id = $userId"; // Substitua $userId pelo ID do usuário logado
+$sql = "SELECT name FROM user WHERE id = $userId";
 $query = mysqli_query($conn, $sql);
 
 if ($query) {

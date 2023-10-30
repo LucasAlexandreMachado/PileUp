@@ -13,20 +13,20 @@ session_start();
 
     if (isset($_GET['postId'])) {
         $bookId = $_GET['postId'];
-        $userId = $_SESSION['id']; // Supondo que o id do usuário esteja armazenado em $_SESSION['id']
+        $userId = $_SESSION['id']; 
     
-        // Consulta SQL para selecionar o livro com o ID correspondente e o mesmo userId
+
         $sql = "SELECT * FROM movies WHERE bookId = $bookId AND userId = $userId";
         $query = mysqli_query($conn, $sql);
     
-        // Verifica se há resultados
+
         if (mysqli_num_rows($query) > 0) {
-            // Exibe os detalhes do livro
+
             $q = mysqli_fetch_assoc($query);
         } else {
-            // Nenhum dado encontrado, redirecione para o index
+
             header("Location: index.php");
-            exit; // Certifique-se de sair do script após o redirecionamento
+            exit;
         }
     }
        
@@ -34,16 +34,16 @@ session_start();
     //
 
     if (isset($_POST["new_post"])) {
-        // Se o arquivo de upload foi enviado com sucesso
+
         if ($_FILES["image_upload"]["error"] == UPLOAD_ERR_OK) {
-            $upload_dir = "uploads/"; // Diretório de destino das imagens
+            $upload_dir = "uploads/"; 
             $temp_name = $_FILES["image_upload"]["tmp_name"];
             $image_name = basename($_FILES["image_upload"]["name"]);
             $target_path = $upload_dir . $image_name;
     
-            // Move o arquivo para a pasta "uploads"
+
             if (move_uploaded_file($temp_name, $target_path)) {
-                // Resto do seu código para inserir dados no banco de dados
+
                 $name = $_POST["name"];
                 $favorite = isset($_POST["favorite"]) ? 1 : 0;
                 $status = $_POST["status"];
@@ -52,7 +52,7 @@ session_start();
                 $notes = $_POST["notes"];
                 $userId = $_SESSION['id'];
     
-                // Insere o caminho da imagem no banco de dados
+
                 $insertQuery = "INSERT INTO movies(Name, Favorite, Status, Score, EpisodeProgress, Notes, userId, file_name) 
                                 VALUES ('$name', $favorite, '$status', $score, $episodeProgress, '$notes', '$userId', '$target_path')";
                 mysqli_query($conn, $insertQuery);
@@ -75,16 +75,16 @@ session_start();
         $episodeProgress = $_REQUEST["episode_progress"];
         $notes = $_REQUEST["notes"];
     
-        // Check if a new image file has been uploaded
+
         if ($_FILES["new_image_upload"]["error"] == UPLOAD_ERR_OK) {
-            $upload_dir = "uploads/"; // Directory for image uploads
+            $upload_dir = "uploads/"; 
             $temp_name = $_FILES["new_image_upload"]["tmp_name"];
             $image_name = basename($_FILES["new_image_upload"]["name"]);
             $target_path = $upload_dir . $image_name;
     
-            // Move the new image file to the "uploads" directory
+
             if (move_uploaded_file($temp_name, $target_path)) {
-                // Update the database with the new image path
+
                 $updateQuery = "UPDATE movies SET Name = '$name', Favorite = $favorite, Status = '$status', Score = $score, EpisodeProgress = $episodeProgress, Notes = '$notes', file_name = '$target_path' WHERE bookId = $bookId";
                 mysqli_query($conn, $updateQuery);
     
@@ -94,7 +94,7 @@ session_start();
                 echo "Error uploading the new image.";
             }
         } else {
-            // No new image file was uploaded, update the database without changing the image path
+
             $updateQuery = "UPDATE movies SET Name = '$name', Favorite = $favorite, Status = '$status', Score = $score, EpisodeProgress = $episodeProgress, Notes = '$notes' WHERE bookId = $bookId";
             mysqli_query($conn, $updateQuery);
     
@@ -114,36 +114,31 @@ session_start();
     }
 
 
-        // Verifica se o parâmetro "id" está presente na URL
+
         if(isset($_GET['id'])) {
             $bookId = $_GET['id'];
     
-            // Consulta SQL para selecionar o livro com o ID correspondente
             $sql = "SELECT * FROM movies WHERE bookId = $bookId";
             $query = mysqli_query($conn, $sql);
     
-            // Verifica se há resultados
             if(mysqli_num_rows($query) > 0) {
-                // Exibe os detalhes do livro
+
                 $q = mysqli_fetch_assoc($query);
             }}
 
 
             if (isset($_POST["upload_profile_image"])) {
-                // Verifica se o arquivo de upload foi enviado com sucesso
+
                 if ($_FILES["profile_image"]["error"] == UPLOAD_ERR_OK) {
-                    $upload_dir = "profileImage/"; // Diretório de destino das imagens de perfil
+                    $upload_dir = "profileImage/";
                     $temp_name = $_FILES["profile_image"]["tmp_name"];
                     $image_name = basename($_FILES["profile_image"]["name"]);
                     $target_path = $upload_dir . $image_name;
             
-                    // Move o arquivo para a pasta "profile_images"
                     if (move_uploaded_file($temp_name, $target_path)) {
-                        // Atualiza o banco de dados com o caminho da imagem de perfil
                         $updateQuery = "UPDATE user SET profile_image = '$target_path' WHERE id = $userId";
                         mysqli_query($conn, $updateQuery);
             
-                        // Redireciona para a página de perfil ou outra página apropriada
                         header("Location: profile.php");
                         exit();
                     } else {

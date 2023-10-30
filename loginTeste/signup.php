@@ -48,7 +48,7 @@ session_start();
         <?php
     if (isset($_SESSION['error'])) {
         echo '<div class="error">' . $_SESSION['error'] . '</div>';
-        unset($_SESSION['error']); // Clear the error after displaying it
+        unset($_SESSION['error']);
     }
     ?>
     </form>
